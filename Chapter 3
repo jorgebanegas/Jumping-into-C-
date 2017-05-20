@@ -1,0 +1,48 @@
+1. Write a program that outputs your name.
+  #include <string>
+  #include <iostream>
+  using namespace std;
+
+  int main()
+      {
+          string name = "";
+          cout << "Please enter your name ";
+          getline(cin,name,'\n');
+          cout << "Your name is " << name << "\n" ;
+      }
+      
+ 2. Write a program that reads in two numbers and adds them together. 
+  #include <iostream>
+  using namespace std;
+
+  int main()
+      {
+         int number1 = 0;
+          int number2 = 0;
+          int result = 0;
+
+          cout << "Please enter a value for number 1 : ";
+          cin >> number1;
+          cout << "Please enter a value for number 2 : ";
+          cin >> number2;
+          result = number1 + number2;
+          cout << "When added together, your new value is " << result << "\n";
+      }
+    
+ 3. Write a program that performs divisions of two numbers read from the user and prints out an exact result. Make sure to test your prgro
+  #include <iostream>
+  using namespace std;
+
+  int main()
+      {
+          double number1 = 0;
+          double number2 = 0;
+          double result = 0;
+
+          cout << "Please enter a value for number 1 : ";
+          cin >> number1;
+          cout << "Please enter a value for number 2 : ";
+          cin >> number2;
+          result = number1 / number2;
+          cout << "When divided, your new value is " << result << "\n";
+      }
