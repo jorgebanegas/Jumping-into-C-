@@ -1,0 +1,80 @@
+1. Ask the user for two users' ages and indicate who is older; behave differently if both are over 100.
+  #include <iostream>
+  using namespace std;
+
+  int main()
+  {
+      int age1 = 0;
+      int age2 = 0;
+
+      cout << "Please enter the age of person 1 ";
+      cin >> age1;
+      cout << "Please enter the age of person 2 ";
+      cin >> age2;
+
+      if (age1 > age2)
+          cout << "Person 1 is older";
+      if (age1 < age2)
+          cout << "Person 2 is older" << "\n";
+      if (age1 >= 100 && age2 >= 100)
+          cout << "Wow you two are soo old!";
+  }
+  
+2. Implement a simple "password" system that takes a password in the form of a number. Make it so that either of two numbers are valid, but use only one if statement to do the check.
+  #include <iostream>
+  using namespace std;
+  
+  int main()
+  {
+      int password = 0;
+    
+      cout << "Please enter your numerical password << "\n";
+      cin >> password;
+      if (password == 12345 || password = 101010)
+          cout << "Access granted";
+      else
+          cout << "Access denied";
+  }
+  
+  3. Write a small calculator that takes as inout one of the four arithmetic operations, the two arguments to those operations, the two arguments to those operations, and them prints out the results/
+  
+    #include <iostream>
+    using namespace std;
+
+    int main()
+    {
+        char arithmetic_expression = 'a';
+        int number1 = 0;
+        int number2 = 0;
+        int results = 0;
+
+        cout << "Please enter the value for number1" << "\n";
+        cin >> number1;
+        cout << "Please enter the value for number2" << "\n";
+        cin >> number2;
+        cout << "Now enter the arithmetic expression to use" << "\n";
+        cin >> arithmetic_expression;
+
+        if(arithmetic_expression == '*')
+        {
+            results = number1 * number2;
+            cout << "Result: " << results;
+        }
+        else if(arithmetic_expression == '+')
+        {
+            results = number1 + number2;
+            cout << "Result: " << results;
+        }
+        else if(arithmetic_expression == '-')
+        {
+            results = number1 - number2;
+            cout << "Result: " << results;
+        }
+        else if(arithmetic_expression == '/')
+        {
+            results = number1 / number2;
+            cout << "Result: " << results;
+        }
+        else
+            cout << "Sorry wrong output!";
+    }
