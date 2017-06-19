@@ -33,3 +33,26 @@
       cout << "Thank you";
   }
 
+3. Write a program that computes a running sum of inputs from the user, terminating when the user gives an input value of 0. 
+  #include <iostream>
+  using namespace std;
+
+  int main() 
+  {
+      int input = 0;
+      int sum = 0;
+      do
+      {
+          cout << "Please enter a number to add ";
+          cin >> input;
+          sum = sum + input;
+          cout << sum << "\n";
+      }
+      while(input != 0);
+      cout << "Exiting...";
+    
+  }
+  
+  4. Write a password prompt that gives a user only a certain number og password entry attempts so that he user gives cannot easily write a password cracker.
+  
+  
