@@ -53,6 +53,32 @@
     
   }
   
-  4. Write a password prompt that gives a user only a certain number og password entry attempts so that he user gives cannot easily write a password cracker.
-  
+4. Write a password prompt that gives a user only a certain number og password entry attempts so that he user gives cannot easily write a password cracker.
+  #include <iostream>
+  #include <string>
+  using namespace std;
+
+  int main()
+  {
+      string password = "";
+      for (int i = 1;i <= 3;i++)
+      {
+          cout << "Please enter your password: ";
+          getline(cin,password,'\n');
+        
+          if(password != "1234567" && i <= 2)
+          {
+              cout << "Attempt number " << i << " failed.\n Please try again.\n";
+          }
+        
+          if(password == "1234567")
+          {
+              cout << "Access granted\n";
+              break;
+          }
+          if (password != "1234567" && i == 3)
+          cout << "Maximum attempts used. Goodbye";
+      }
+
+  }
   
