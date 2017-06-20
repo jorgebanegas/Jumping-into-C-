@@ -89,3 +89,65 @@
       while(input!= 0);
    }
    
+   2.Make your calculator program perform computations in a seperate function for each type of computation.
+   #include <iostream>
+   using namespace std;
+
+   int mult(int num1, int num2)
+   {
+      return (num1 * num2);
+    
+   }
+
+   int add(int num1, int num2)
+   {
+      return (num1 + num2);
+    
+   }
+
+   int sub(int num1, int num2)
+   {
+      return (num1 - num2);
+    
+   }
+
+   int di(int num1, int num2)
+   {
+      return (num1 / num2);
+    
+   }
+
+   int main()
+      {
+         char arithmetic_expression = 'a';
+         int number1 = 0;
+         int number2 = 0;
+         int results = 0;
+
+         cout << "Please enter the value for number1" << "\n";
+         cin >> number1;
+         cout << "Please enter the value for number2" << "\n";
+         cin >> number2;
+         cout << "Now enter the arithmetic expression to use" << "\n";
+         cin >> arithmetic_expression;
+
+         if(arithmetic_expression == '*')
+         {
+            cout << mult(number1,number2);
+         }
+         else if(arithmetic_expression == '+')
+         {
+               cout << add(number1,number2);
+         }
+         else if(arithmetic_expression == '-')
+         {
+            cout << sub(number1,number2);
+         }
+         else if(arithmetic_expression == '/')
+         {
+               cout << di(number1,number2);
+         }
+         else
+               cout << "Sorry wrong output!";
+      }
+   
