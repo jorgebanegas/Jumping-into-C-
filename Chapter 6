@@ -1,3 +1,91 @@
 1. Take the "menu program" you wrote earlier and break it out into a series of call to functions for each of the menu items.
    Add the calculator and "100 bottles of beer" as two different functions that can be called. 
+   #include <iostream>
+   using namespace std;
+
+   void menu()
+     {
+         int input = 0;
+         do
+         {
+            cout << "Enter the given command number\n" << " 1: Power off\n 2: Reset Power\n 3: Power ON\n 4: Erase\n";
+            cin >> input;
+         }
+         while (input != 1 && input != 2 && input != 3 && input != 4 && input != 5);
+    
+         cout << "Thank you";
+   }
+  
+   void song()
+   {
+         for(int i = 99;i > 1;i--)
+         {
+         cout << i << " bottles of beer on the wall, 99 bottles of beer.\n\tTake one down and pass it around " << i-1 << "  bottles of beer on the wall\n"; 
+       
+         if(i == 1)
+         {
+               cout << "1 bottle of beer on the wall, 1 bottle of beer.\n\tTake one down and pass it around, no more bottles of beer on the wall";
+         }
+         }
+         cout << "No more bottles of beer on the wall, no more bottles of beer. \n\tGo to the store and buy some more, 99 bottles of beer on the wall.";
+   }
+  
+  
+   void calculator()
+      {
+         char arithmetic_expression = 'a';
+         int number1 = 0;
+         int number2 = 0;
+         int results = 0;
+
+         cout << "Please enter the value for number1" << "\n";
+         cin >> number1;
+         cout << "Please enter the value for number2" << "\n";
+         cin >> number2;
+         cout << "Now enter the arithmetic expression to use" << "\n";
+         cin >> arithmetic_expression;
+
+         if(arithmetic_expression == '*')
+         {
+               results = number1 * number2;
+               cout << "Result: " << results;
+         }
+         else if(arithmetic_expression == '+')
+         {
+               results = number1 + number2;
+               cout << "Result: " << results;
+         }
+         else if(arithmetic_expression == '-')
+         {
+               results = number1 - number2;
+               cout << "Result: " << results;
+         }
+         else if(arithmetic_expression == '/')
+         {
+               results = number1 / number2;
+               cout << "Result: " << results;
+         }
+         else
+               cout << "Sorry wrong output!";
+      }
+    
+   int main()
+   {
+      int input = 0;
+      do
+      {
+      cout << "Please select the function number \n" << "1: Menu 2: Song 3: Calculator\n";
+      cin >> input;
+    
+      if (input == 1)
+         menu();
+      if (input == 2)
+         song();
+      if (input == 3)
+         calculator();
+         else 
+         cout << "Input invalid";
+      }
+      while(input!= 0);
+   }
    
