@@ -151,3 +151,34 @@
                cout << "Sorry wrong output!";
       }
    
+3. Modify your password program from before to put all of the password checking logic into a seperate function, apart from the rest of the program.
+   
+#include <iostream>
+#include <string>
+using namespace std;
+
+  void check(string password)
+  {
+      if(password != "1234567")
+          {
+              cout << "Attempt failed.\n Please try again.\n";
+              
+          }
+        
+          if(password == "1234567")
+          {
+              cout << "Access granted\n";
+          }
+  }
+  
+  int main()
+  {
+      string password = "";
+      for (int i = 1;i <= 3;i++)
+      {
+          cout << "Please enter your password: ";
+          getline(cin,password,'\n');
+          check(password);
+      }
+
+  }
