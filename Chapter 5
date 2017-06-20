@@ -100,7 +100,46 @@
     The first answer is indicated by 1, the second by 2, the third by 3. The answers are tallied until a 0 is entered. 
     The program should then show the results of the poll, 
     try making a bar graph that shows the results properly scaled to fit on your screen no matter how many results were entered.
-  
-  
+  #include <iostream>
+  using namespace std;
+
+  int main() 
+  {
+      string pollQuestion;
+      string pollAnswer1;
+      string pollAnswer2;
+      string pollAnswer3;
+    
+      int input = 0;
+      string tallyMark1;
+      string tallyMark2;
+      string tallyMark3;
+    
+      cout << "Please enter your poll question \n";
+      getline(cin,pollQuestion,'\n');
+    
+      cout << "Now enter answer choice 1: ";
+      getline(cin,pollAnswer1,'\n');
+    
+      cout << "Now enter answer choice 2: ";
+      getline(cin,pollAnswer2,'\n');
+    
+      cout << "Now enter answer choice 3: ";
+      getline(cin,pollAnswer3,'\n');
+    
+      do
+      {
+      cout << "Poll Question: " << pollQuestion << "\n 1: " << pollAnswer1 << "\n 2: " << pollAnswer2 << "\n 3: " << pollAnswer3 << "\n";
+      cin >> input;
+      if (input == 1)
+          tallyMark1.append("-");
+      if (input == 2)
+          tallyMark2.append("-");
+      if (input == 3)
+          tallyMark3.append("-");
+      }
+      while (input != 0);
+      cout << "Answer choice 1: " << tallyMark1 << "\n" << "Answer choice 2: " << tallyMark2 << "\n" << "Answer choice 3: " << tallyMark3 << "\n";
+  }
  
   
