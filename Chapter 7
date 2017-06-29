@@ -1,0 +1,222 @@
+Implement the source code that turn number into English Text
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int split_hundreds(int input);
+int split_thousands(int input);
+int split_millions(int input);
+string compute(int number);
+
+int main()
+{
+    int input = 0;
+    int hundreds = 0;
+    int thousands = 0;
+    int millions = 0; 
+    string output_hundreds = "";
+    string output_thousands = "";
+    string output_millions = "";
+    string output = "";
+    
+    
+    cout << "Please enter number: ";
+    cin >> input;
+    
+    if(input <= 999)
+    {
+        output_hundreds = compute(input);
+        cout << output_hundreds;
+    }
+    
+    if(input > 999 && input <= 999999)
+    {
+        thousands = split_thousands(input);
+        output_thousands = compute(thousands);
+        output_thousands.append("thousand ");
+        
+        hundreds = split_hundreds(input);
+        output_hundreds = compute(hundreds);
+        
+        cout << output_thousands << output_hundreds;
+    }
+    
+    if(input > 999999 && input <= 999999999)
+    {
+        millions = split_millions(input);
+        output_millions = compute(millions);
+        output_millions.append("million ");
+        
+        thousands = split_thousands(input);
+        output_thousands = compute(thousands);
+        output_thousands.append("thousand ");
+        
+        hundreds = split_hundreds(input);
+        output_hundreds = compute(hundreds);
+        
+        cout << output_millions << output_thousands << output_hundreds;
+    }
+        
+        
+}
+
+int split_hundreds(int number)
+{
+    int temp_number = 0;
+    
+    if(number > 999 && number <= 999999)
+    {
+        temp_number = (number/1000);
+        temp_number = temp_number * 1000;
+        return(number % temp_number);
+    }
+}
+    
+
+
+int split_thousands(int number)
+{
+    int temp_number = 0;
+    
+    if(number > 999999 && number <= 999999999)
+    {
+        temp_number = number / 1000000;
+        temp_number = number * 1000000;
+        number = number % temp_number;  
+    }
+    return(number/1000);
+}
+
+int split_millions(int number)
+{
+    return(number/1000000);
+}
+
+string compute(int number)
+{   
+    string output = "";
+    int tens = (number % 100);
+    int singles = (number % 10);
+    
+    if(number <= 999 && number > 899)
+    output = "nine hundred ";
+    
+    if(number <= 899 && number > 799)
+    output = "eight hundred ";
+    
+    if(number <= 799 && number > 699)
+    output = "seven hundred ";
+    
+    if(number <= 699 && number > 599)
+    output = "six hundred ";
+    
+    if(number <= 599 && number > 499)
+    output = "five hundred ";
+    
+    if(number <= 499 && number > 399)
+    output = "four hundred ";
+    
+    if(number <= 399 && number > 299)
+    output = "three hundred ";
+    
+    if(number <= 299 && number > 199)
+    output = "two hundred ";
+    
+    if(number <= 199 && number > 99)
+    output = "one hundred ";
+    
+    if(tens < 20)
+    {
+        switch(tens)
+        {
+            case 19 : output.append("nineteen");
+            break;
+            case 18 : output.append("eighteen");
+            break;
+            case 17 : output.append("seventeen");
+            break;
+            case 16 : output.append("sixteen");
+            break;
+            case 15 : output.append("fifteen");
+            break;
+            case 14 : output.append("fourteen");
+            break;
+            case 13 : output.append("thirteen");
+            break;
+            case 12 : output.append("twelve");
+            break;
+            case 11 : output.append("eleven");
+            break;
+            case 10 : output.append("ten");
+            break;
+            case 9 : output.append("nine");
+            break;
+            case 8 : output.append("eight");
+            break;
+            case 7 : output.append("seven");
+            break;
+            case 6 : output.append("six");
+            break;
+            case 5 : output.append("five");
+            break;
+            case 4 : output.append("four");
+            break;
+            case 3 : output.append("three");
+            break;
+            case 2 : output.append("two");
+            break;
+            case 1 : output.append("one");
+            
+        }
+        return (output);
+    }
+    
+    if (tens >= 20)
+    {
+        if(tens <= 99 && tens > 89)
+            output.append("ninety ");
+        if(tens <= 89 && tens > 79)
+            output.append("eighty ");
+        if(tens <= 79 && tens > 69)
+            output.append("seventy ");
+        if(tens <= 69 && tens > 59)
+            output.append("sixty ");
+        if(tens <= 59 && tens > 49)
+            output.append("fifty ");
+        if(tens <= 49 && tens > 39)
+            output.append("forty ");
+        if(tens <= 39 && tens > 29)
+            output.append("thirty ");
+        if(tens <= 29 && tens > 19)
+            output.append("twenty ");
+    } 
+    
+    if (singles != 0)
+    {
+        switch (singles)
+        {
+            case 9 : output.append("nine ");
+            break;
+            case 8 : output.append("eight ");
+            break;
+            case 7 : output.append("seven ");
+            break;
+            case 6 : output.append("six ");
+            break;
+            case 5 : output.append("five ");
+            break;
+            case 4 : output.append("four ");
+            break;
+            case 3 : output.append("three ");
+            break;
+            case 2 : output.append("two ");
+            break;
+            case 1 : output.append("one ");
+            break;
+        }
+    }
+    return(output);
+}
+
+http://cpp.sh/54fe7
