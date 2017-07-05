@@ -226,3 +226,4 @@ string compute(int number)
 }
 
 2. Design a program that finds all number from 1 to 1000 whose prime factors, when added together, sum up to a prime number. Implement the code for that algorithm. 
+http://cpp.sh/5idp
