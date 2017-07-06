@@ -1,0 +1,28 @@
+1. Rewrite the menu program you wrote in the previous chapters and use switch case. 
+
+#include <iostream>
+using namespace std;
+
+int main()
+  {
+      int input = 0;
+          cout << "Enter the given command number\n" << " 1: Power off\n 2: Reset Power\n 3: Power ON\n 4: Erase\n";
+          cin >> input;
+          switch (input)
+          {
+              case 1: cout << "Powering off";
+              break;
+              case 2: cout << "Resetting Power";
+              break;
+              case 3: cout << "Powering On";
+              break;
+              case 4: cout << "Erasing all data";
+              break;
+              default: cout<< "Thank you";
+              break;
+          }
+  }
+  
+  2. Write a program that outputs the results of the 12 days of christmas using switch case.
+  
+  
