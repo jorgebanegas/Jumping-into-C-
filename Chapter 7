@@ -226,4 +226,57 @@ string compute(int number)
 }
 
 2. Design a program that finds all number from 1 to 1000 whose prime factors, when added together, sum up to a prime number. Implement the code for that algorithm. 
-http://cpp.sh/5idp
+
+#include <iostream>
+using namespace std;
+
+int primefactors(int number);
+int isPrime(int number);
+
+int main()
+{
+    int sumOfPrimeFactors;
+    
+    for(int i = 1; i <= 1000; i++)
+    {
+        sumOfPrimeFactors = primefactors(i);
+        if(isPrime(sumOfPrimeFactors))
+        {
+            cout << "Number : " << i << " \nSum of prime factors : " << sumOfPrimeFactors << " is prime. \n";    
+        }
+    }
+}
+
+int isPrime(int number)
+{
+ for(int counter = 2; counter < number; counter++)
+ {
+     if(number % counter == 0)
+     return 0;
+ }
+ return 1;
+}
+
+int primefactors(int number)
+{
+    int sum = 0;
+    int counter = 2;
+    
+    while(counter <= number)
+    {
+        if(number % counter == 0)
+        {
+            number = number / counter;
+            sum += counter;
+            
+            if(number == 1)
+                return sum;
+        }
+        
+        else if(number % counter != 0)
+        {
+            counter++;
+        }
+    }
+    cout << sum;
+}
