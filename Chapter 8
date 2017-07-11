@@ -56,3 +56,153 @@ int main()
 
 3. Write a two player tic tac toe game; use enums when possible to represent the values of the board. 
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    enum board {blank = 0, player1 = 1, player2 = 2};
+    string input;
+    int game = 0;
+    int one_one = blank, one_two = blank, one_three = blank;
+    int two_one = blank, two_two = blank, two_three = blank;
+    int three_one = blank, three_two = blank, three_three = blank;
+    
+    cout << "Welcome to Tic Tac Toe!\n";
+    do
+    {
+      cout << "Player 1, enter board position eg. one_one\n";
+      cin >> input;
+      if(input == "one_one")
+        one_one = player1;
+      if(input == "one_two") 
+        one_two = player1;
+      if(input == "one_three")
+        one_three = player1;
+      if(input == "two_one")
+        two_one = player1;
+      if(input == "two_two") 
+        two_two = player1;
+      if(input == "two_three")
+        two_three = player1;
+      if(input == "three_one")
+        three_one = player1;
+      if(input == "three_two")
+        three_two = player1;
+      if(input == "three_three")
+        three_three = player1;
+          
+      if(one_one = player1 && one_two == player1 && one_three ==player1)
+      {
+        cout << "Player 1 wins!";
+        game = 1;
+        continue;
+      }
+      else if (two_one == player1 && two_two == player1 && two_three == player1)
+      {
+        cout << "Player 1 wins!";
+        game = 1;
+        continue;
+      }
+      else if (three_one == player1 && three_two == player1 && three_three == player1)
+      {
+        cout << "Player 1 wins!";
+        game = 1;
+        continue;
+      }
+      else if(one_one == player1 && two_two == player1 && three_three == player1)
+      {
+        cout << "Player 1 wins!";
+        game = 1;
+        continue;
+      }
+      else if (three_one == player1 && two_two == player1 && one_three == player1)
+        {
+        cout << "Player 1 wins!";
+        game = 1;
+        continue;
+        }
+      else if(one_two == player1 && two_two == player1 && three_two == player1)
+      {
+        cout << "Player 1 wins!";
+        game = 1;
+        continue;
+      }
+      else if (one_one == player1 && two_one == player1 && three_one == player1)
+      {
+        cout << "Player 1 wins!";
+        game = 1;
+        continue;
+      }
+      else if (one_three == player1 && two_three == player1 && three_three == player1)
+      {
+        cout << "Player 1 wins!";
+        game = 1;
+        continue;
+      }
+    
+      cout << "Player 2, enter board position eg. one_one\n";
+      cin >> input;
+      if(input == "one_one")
+        one_one = player2;
+      if(input == "one_two") 
+        one_two = player2;
+      if(input == "one_three")
+        one_three = player2;
+      if(input == "two_one")
+        two_one = player2;
+      if(input == "two_two") 
+        two_two = player2;
+      if(input == "two_three")
+        two_three = player2;
+      if(input == "three_one")
+        three_one = player2;
+      if(input == "three_two")
+        three_two = player2;
+      if(input == "three_three")
+        three_three = player2;
+          
+      if(one_one = player2 && one_two == player2 && one_three == player2)
+      {
+        cout << "Player 2 wins!";
+        game = 1;
+      }
+      else if (two_one == player2 && two_two == player2 && two_three == player2)
+      {
+        cout << "Player 2 wins!";
+        game = 1;
+      }
+      else if (three_one == player2 && three_two == player2 && three_three == player2)
+      {
+        cout << "Player 2 wins!";
+        game = 1;
+      }
+      else if(one_one == player2 && two_two == player2 && three_three == player2)
+      {
+        cout << "Player 2 wins!";
+        game = 1;
+      }
+      else if (three_one == player2 && two_two == player2 && one_three == player2)
+        {
+        cout << "Player 2 wins!";
+        game = 1;
+        }
+      else if(one_two == player2 && two_two == player2 && three_two == player2)
+      {
+        cout << "Player 2 wins!";
+        game = 1;
+      }
+      else if (one_one == player2 && two_one == player2 && three_one == player2)
+      {
+        cout << "Player 2 wins!";
+        game = 1;
+      }
+      else if (one_three == player2 && two_three == player2 && three_three == player2)
+      {
+        cout << "Player 2 wins!";
+        game = 1;
+      }
+    }  
+    while(game == 0);
+  }
