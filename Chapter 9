@@ -70,3 +70,46 @@ int ranRange(int min, int max)
 
 3. Write a program that solves the guessing game from part 1.
 
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+
+using namespace std;
+
+int ranRange(int min, int max);
+
+int main()
+{
+  srand(time(NULL));
+  
+  int number = ranRange(1,100);
+  int guess = ranRange(1,100);
+  cout << number << "\n";
+  
+  do 
+  {
+    cout << "Guess a number between 1 and 100.\n";
+    cout << guess << "\n";
+    
+    if(guess < number)
+    {
+      cout << "Your guess is too low!\n";
+      guess = guess + 2;
+    }
+    
+    else if(guess > number)
+    {
+      cout << "Your guess is too high!\n";
+      guess = guess - 1;
+    }
+    
+    }
+  while(guess != number);
+  cout << guess << "\n";
+  cout << "Correct!";
+}
+
+int ranRange(int min, int max)
+{
+  return rand() % (100 - 1) + 1;
+}
